@@ -64,13 +64,18 @@
       btn.disabled = true;
 
       setTimeout(() => {
-        romanticText.textContent = romanticTitle;
-        romanticSub.textContent = romanticSubtitle;
-        romantic.classList.add('visible');
-        romantic.setAttribute('aria-hidden','false');
-        btn.textContent = 'Dikirim icaaa';
-      }, punchlineDelay + 700);
-    });
+  // sembunyikan pesan playful biar gak nabrak
+  playful.classList.remove('show');
+  stage.classList.add('hide');
+
+  // lalu munculkan pesan romantis
+  romanticText.textContent = romanticTitle;
+  romanticSub.textContent = romanticSubtitle;
+  romantic.classList.add('visible');
+  romantic.setAttribute('aria-hidden', 'false');
+  btn.textContent = 'Dikirim icaaa';
+}, punchlineDelay + 700);
+
 
     document.getElementById('title').addEventListener('dblclick', e => {
       const t = prompt('Edit judul cepat:', e.target.textContent);
